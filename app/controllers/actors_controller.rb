@@ -11,49 +11,51 @@ class ActorsController < ApplicationController
         p.save
         
         
-        @current_count = Actor.count
+        @current_count_actors = Actor.count
         
         render ("actors/create_actor.html.erb")
     end
     
     def index
         
+        @list_of_actors = Actor.order(:created_at => :desc)
+        
         render ("actors/index_actors.html.erb")
     end
     
     def show
-        @photo = Actor.find(params["photo_id"])
+        @actor = Actor.find(params["actor_number"])
         
         render ("actors/show_actor.html.erb")
     end
     
     def edit
-        @photo = Actor.find(params["photo_id"])
+        @actor = Actor.find(params["actor_number"])
         
         render ("actors/edit_actor.html.erb")
     end
     
     def update
-        p = Actor.find(params[:photo_id])
+        a = Actor.find(params[:actor_number])
         
-        p.source = params[:the_source]
-        p.caption = params[:the_caption]
+        a.source = params[:the_source]
+        a.caption = params[:the_caption]
         
-        p.save
+        a.save
         
         render ("actors/update_actor.html.erb")
     end
     
     def destroy
-         p = Actor.find(params["adios_id"])
+         a = Actor.find(params["adios_actor_number"])
         
-        @photo_delete_id = params[:adios_id]
+        @actor_delete_id = params[:adios_actor_number]
         
-        p.destroy
+        a.destroy
         
-        @remaining_count = Actor.count
+        @remaining_count_actor = Actor.count
         
-        p.save
+        a.save
         
         render ("actors/destroy_actor.html.erb")
     end

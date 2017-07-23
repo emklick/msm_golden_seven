@@ -1,26 +1,41 @@
-<h1>Hello!</h1>
+<h1>Edit Actor Entry Number <%= @actor.id %></h1>
 
-<!--<h1>Edit Photo <%= @photo.id %></h1>-->
+<form action="/update_actor/<%= @actor.id %>">
+  <div>
+        <label for="actor_name_input">
+        Name
+            
+        </label>
+            <input id="actor_name_input" type="text", name="actor_name">
+    </div>
+    
+    <div>
+        <label for="actor_bio_input">
+        Bio    
+            
+        </label>
+            <input id="actor_bio_input" type="text", name="actor_bio">
+    </div>
+    
+     <div>
+        <label for="actor_dob_input">
+        DOB
+            
+        </label>
+            <input id="actor_dob_input" type="text", name="actor_dob">
+    </div>
+    
+    <div>
+        <label for="actor_image_input">
+        Image URL
+            
+        </label>
+            <input id="actor_image_input" type="text", name="actor_image">
+    </div>
 
-<!--<form action="/update_photo/<%= @photo.id %>">-->
-<!--  <div>-->
-<!--    <label for="source_input">-->
-<!--      Image URL-->
-<!--    </label>-->
-
-<!--    <input id="source_input" type="text" name="the_source" value="<%= @photo.source %>">-->
-<!--  </div>-->
-
-<!--  <div>-->
-<!--    <label for="caption_input">-->
-<!--      Caption-->
-<!--    </label>-->
-
-<!--    <input id="caption_input" type="text" name="the_caption" value="<%= @photo.caption %>">-->
-<!--  </div>-->
-
-<!--  <button>-->
-<!--    Update Photo-->
-<!--  </button>-->
-<!--</form>-->
+  <button>
+    Update Actor
+  </button>
+  
+</form>
 

@@ -1,25 +1,35 @@
-<h1>Hello!</h1>
+<h1>Director Details</h1>
 
-<!--<h1>Photo Details</h1>-->
+<img src="<%= @movie.image_url %>">
 
-<!--<img src="<%= @photo.source %>">-->
+<p>
+  <%= @movie.title %>
+</p>
 
-<!--<p>-->
-<!--  <%= @photo.caption %>-->
-<!--</p>-->
+<p>
+  <%= @movie.year %>
+</p>
 
-<!--<p>-->
-<!--  <%= time_ago_in_words(@photo.created_at) %> ago-->
-<!--</p>-->
+<p>
+  <%= @movie.duration %>
+</p>
 
-<!--<a href="/photos" class="btn btn-default">-->
-<!--  Go back-->
-<!--</a>-->
+<p>
+  <%= @movie.description %>
+</p>
 
-<!--<a href="/photos/<%= @photo.id %>/edit" class="btn btn-default">-->
-<!--  Edit-->
-<!--</a>-->
+<p>
+  <%= time_ago_in_words(@movie.created_at) %> ago
+</p>
 
-<!--<a href="/delete_photo/<%= @photo.id %>" class="btn btn-default">-->
-<!--  Delete-->
-<!--</a>-->
+<a href="/movies" class="btn btn-default">
+  Go back
+</a>
+
+<a href="/movies/<%= @movie.id %>/edit" class="btn btn-default">
+  Edit
+</a>
+
+<a href="/delete_movie/<%= @movie.id %>" class="btn btn-default">
+  Delete
+</a>

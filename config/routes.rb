@@ -31,34 +31,34 @@ Rails.application.routes.draw do
   
 # MOVIES   
   get("/movies", :controller => "movies", :action => "index")
-  get("/movies/:movie__entry_number", :controller => "movies", :action => "show")
+  get("/movies/:movie_entry_number", :controller => "movies", :action => "show")
   
 
 # UPDATE
 
 # ACTORS
-  get("/actors/:actor_name/edit", :controller => "actors", :action => "edit")
-  get("/update_actor/:actor_name", :controller => "actors", :action => "update")
+  get("/actors/:actor_number/edit", :controller => "actors", :action => "edit")
+  get("/update_actor/:actor_number", :controller => "actors", :action => "update")
   
 # DIRECTORS
-  get("/directors/:director_name/edit", :controller => "directors", :action => "edit")
-  get("/update_director/:director_name", :controller => "directors", :action => "update")
+  get("/directors/:director_number/edit", :controller => "directors", :action => "edit")
+  get("/update_director/:director_number", :controller => "directors", :action => "update")
 
 # MOVIES   
-  get("/movies/:movie_title/edit", :controller => "movies", :action => "edit")
-  get("/update_movie/:movie_title", :controller => "movies", :action => "update")
+  get("/movies/:movie_number/edit", :controller => "movies", :action => "edit")
+  get("/update_movie/:movie_number", :controller => "movies", :action => "update")
   
   
 # DESTROY
 
 # ACTORS
-  get("/destroy_actor/", :controller => "actors", :action => "destroy")
+  get("/delete_actor/:adios_actor_number", :controller => "actors", :action => "destroy")
 
 # DIRECTORS   
-  get("/destroy_director/", :controller => "directors", :action => "destroy")
+  get("/delete_director/:adios_director_number", :controller => "directors", :action => "destroy")
 
 # MOVIES  
-  get("/destroy_movie/", :controller => "movies", :action => "destroy")
+  get("/delete_movie/:adios_movie_number", :controller => "movies", :action => "destroy")
   
   
 end

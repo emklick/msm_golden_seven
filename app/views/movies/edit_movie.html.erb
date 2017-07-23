@@ -1,15 +1,49 @@
-<h1>Hello!</h1>
+<h1>Edit Movie Entry Number <%= @movie.id %></h1>
 
-<!--<h1>You deleted a photo!</h1>-->
+<form action="/update_photo/<%= @movie.id %>">
+  <div>
+        <label for="title_input">
+        Title
+            
+        </label>
+            <input id="title_input" type="text", name="movie_name">
+    </div>
+    
+    <div>
+        <label for="year_input">
+        Year    
+            
+        </label>
+            <input id="year_input" type="text", name="movie_bio">
+    </div>
+    
+     <div>
+        <label for="duration_input">
+        Duration (Minutes)
+            
+        </label>
+            <input id="duration_input" type="text", name="movie_dob">
+    </div>
+    
+    <div>
+        <label for="description_input">
+        Description
+            
+        </label>
+            <input id="description_input" type="text", name="movie_image">
+    </div>
+    
+    <div>
+        <label for="movie_image_input">
+        Image URL
+            
+        </label>
+            <input id="movie_image_input" type="text", name="movie_image">
+    </div>
 
-<!--<p>-->
-<!--  There are now <%= @remaining_count %> photos.-->
-<!--</p>-->
-
-<!--<p>-->
-<!--  <a href="/photos">-->
-<!--    Click Here-->
-<!--    </a>-->
-<!--    to go back.-->
+  <button>
+    Update Movie
+  </button>
   
-<!--</p>-->
+</form>
+

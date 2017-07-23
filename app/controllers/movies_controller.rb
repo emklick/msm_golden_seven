@@ -11,49 +11,51 @@ class MoviesController < ApplicationController
         p.save
         
         
-        @current_count = Movie.count
+        @current_count_movies = Movie.count
         
         render ("movies/create_movie.html.erb")
     end
     
     def index
         
+        @list_of_movies = Movie.order(:created_at => :desc)
+        
         render ("movies/index_movies.html.erb")
     end
     
     def show
-         @photo = Photo.find(params["photo_id"])
+        @movie = Movie.find(params["movie_number"])
         
         render ("movies/show_movie.html.erb")
     end
     
     def edit
-         @photo = Photo.find(params["photo_id"])
+        @movie = Movie.find(params["movie_number"])
         
         render ("movies/edit_movie.html.erb")
     end
     
     def update
-        p = Photo.find(params[:photo_id])
+        m = Movie.find(params[:movie_number])
         
-        p.source = params[:the_source]
-        p.caption = params[:the_caption]
+        m.source = params[:the_source]
+        m.caption = params[:the_caption]
         
-        p.save
+        m.save
         
         render ("movies/update_movie.html.erb")
     end
     
     def destroy
-         p = Photo.find(params["adios_id"])
+        m = Movie.find(params["adios_movie_number"])
         
-        @photo_delete_id = params[:adios_id]
+        @movie_delete_id = params[:adios_movie_number]
         
-        p.destroy
+        m.destroy
         
-        @remaining_count = Photo.count
+        @remaining_count_movie = Movie.count
         
-        p.save
+        m.save
         
         render ("movies/destroy_movie.html.erb")
     end

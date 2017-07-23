@@ -12,49 +12,51 @@ class DirectorsController < ApplicationController
         p.save
         
         
-        @current_count = Director.count
+        @current_count_directors = Director.count
         
         render ("directors/create_director.html.erb")
     end
     
     def index
         
+        @list_of_directors = Director.order(:created_at => :desc)
+    
         render ("directors/index_directors.html.erb")
     end
     
     def show
-        @photo = Photo.find(params["photo_id"])
+        @director = Director.find(params["director_number"])
         
         render ("directors/show_director.html.erb")
     end
     
     def edit
-        @photo = Photo.find(params["photo_id"])
+        @director = Director.find(params["director_number"])
         
         render ("directors/edit_director.html.erb")
     end
     
     def update
-        p = Photo.find(params[:photo_id])
+        d = Director.find(params[:director_number])
         
-        p.source = params[:the_source]
-        p.caption = params[:the_caption]
+        d.source = params[:the_source]
+        d.caption = params[:the_caption]
         
-        p.save
+        d.save
         
         render ("directors/update_director.html.erb")
     end
     
     def destroy
-         p = Photo.find(params["adios_id"])
+        d = Director.find(params["adios_director_number"])
         
-        @photo_delete_id = params[:adios_id]
+        @director_delete_id = params[:adios_director_number]
         
-        p.destroy
+        d.destroy
         
-        @remaining_count = Photo.count
+        @remaining_count_director = Director.count
         
-        p.save
+        d.save
         
         render ("directors/destroy_director.html.erb")
     end
