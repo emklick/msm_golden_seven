@@ -45,6 +45,8 @@ class MoviesController < ApplicationController
     
         @movie_title = params[:movie_title]
         
+        @movie_id = params[:movie_entry_number]
+        
         m.save
         
         render ("movies/update_movie.html.erb")

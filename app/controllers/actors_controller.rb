@@ -43,6 +43,7 @@ class ActorsController < ApplicationController
         a.dob = params[:actor_dob]
         
         @actor_name = params[:actor_name]
+        @actor_id = params[:actor_entry_number]
         
         a.save
         

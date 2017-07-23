@@ -44,6 +44,8 @@ class DirectorsController < ApplicationController
         
         @director_name = params[:director_name] 
         
+        @direcctor_id = params[:director_entry_number]
+        
         d.save
         
         render ("directors/update_director.html.erb")
