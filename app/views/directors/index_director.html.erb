@@ -6,7 +6,7 @@
 
 <%= @list_of_directors.each do |director| %>
   <div class="thumbnail">
-    <img src="<%= director.source %>">
+    <img src="<%= director.image_url %>">
 
     <div class="name">
       <a href="/directors/<%= director.id %>" class="btn btn-default btn-block">

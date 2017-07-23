@@ -6,9 +6,9 @@ class ActorsController < ApplicationController
     end
     
     def create
-        p = Actor.new
+        a = Actor.new
         
-        p.save
+        a.save
         
         
         @current_count_actors = Actor.count
@@ -38,8 +38,9 @@ class ActorsController < ApplicationController
     def update
         a = Actor.find(params[:actor_number])
         
-        a.source = params[:the_source]
-        a.caption = params[:the_caption]
+        a.name = params[:actor_name]
+        a.bio = params[:actor_bio]
+        a.dob = params[:actor_dob]
         
         a.save
         
@@ -47,7 +48,7 @@ class ActorsController < ApplicationController
     end
     
     def destroy
-         a = Actor.find(params["adios_actor_number"])
+        a = Actor.find(params["adios_actor_number"])
         
         @actor_delete_id = params[:adios_actor_number]
         

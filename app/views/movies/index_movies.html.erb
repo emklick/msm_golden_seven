@@ -6,7 +6,7 @@
 
 <%= @list_of_movies.each do |movie| %>
   <div class="thumbnail">
-    <img src="<%= movie.source %>">
+    <img src="<%= movie.image_url %>">
 
     <div class="title">
       <a href="/directors/<%= movie.id %>" class="btn btn-default btn-block">

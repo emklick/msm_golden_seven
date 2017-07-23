@@ -6,9 +6,9 @@ class MoviesController < ApplicationController
     end
     
     def create
-        p = Movie.new
+        m = Movie.new
 
-        p.save
+        m.save
         
         
         @current_count_movies = Movie.count
@@ -38,8 +38,10 @@ class MoviesController < ApplicationController
     def update
         m = Movie.find(params[:movie_number])
         
-        m.source = params[:the_source]
-        m.caption = params[:the_caption]
+        m.title = params[:movie_title]
+        m.year = params[:movie_year]
+        m.duration = params[:movie_duration]
+        m.description = params[:movie_description]
         
         m.save
         

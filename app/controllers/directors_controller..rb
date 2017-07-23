@@ -6,10 +6,10 @@ class DirectorsController < ApplicationController
     end
     
     def create
-        p = Director.new
+        d = Director.new
 
         
-        p.save
+        d.save
         
         
         @current_count_directors = Director.count
@@ -39,8 +39,9 @@ class DirectorsController < ApplicationController
     def update
         d = Director.find(params[:director_number])
         
-        d.source = params[:the_source]
-        d.caption = params[:the_caption]
+        d.name = params[:director_name]
+        d.bio = params[:director_bio]
+        d.dob = params[:director_dob]
         
         d.save
         
