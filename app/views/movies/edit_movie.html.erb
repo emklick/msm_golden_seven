@@ -6,7 +6,7 @@
         Title
             
         </label>
-            <input id="title_input" type="text", name="movie_name">
+            <input id="title_input" type="text", name="movie_name" value="<%= @movie.title %>">
     </div>
     
     <div>
@@ -14,7 +14,7 @@
         Year    
             
         </label>
-            <input id="year_input" type="text", name="movie_bio">
+            <input id="year_input" type="text", name="movie_bio" value="<%= @movie.year %>">
     </div>
     
      <div>
@@ -22,7 +22,7 @@
         Duration (Minutes)
             
         </label>
-            <input id="duration_input" type="text", name="movie_dob">
+            <input id="duration_input" type="text", name="movie_dob" value="<%= @movie.duration %>">
     </div>
     
     <div>
@@ -30,7 +30,7 @@
         Description
             
         </label>
-            <input id="description_input" type="text", name="movie_image">
+            <input id="description_input" type="text", name="movie_image" value="<%= @movie.description %>">
     </div>
     
     <div>
@@ -38,7 +38,7 @@
         Image URL
             
         </label>
-            <input id="movie_image_input" type="text", name="movie_image">
+            <input id="movie_image_input" type="text", name="movie_image" value="<%= @movie.image_url %>">
     </div>
 
   <button>

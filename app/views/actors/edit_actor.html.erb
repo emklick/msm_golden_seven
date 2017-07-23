@@ -6,7 +6,7 @@
         Name
             
         </label>
-            <input id="actor_name_input" type="text", name="actor_name">
+            <input id="actor_name_input" type="text", name="actor_name" value="<%= @actor.name %>">
     </div>
     
     <div>
@@ -14,7 +14,7 @@
         Bio    
             
         </label>
-            <input id="actor_bio_input" type="text", name="actor_bio">
+            <input id="actor_bio_input" type="text", name="actor_bio" value="<%= @actor.bio %>">
     </div>
     
      <div>
@@ -22,7 +22,7 @@
         DOB
             
         </label>
-            <input id="actor_dob_input" type="text", name="actor_dob">
+            <input id="actor_dob_input" type="text", name="actor_dob" value="<%= @actor.dob %>">
     </div>
     
     <div>
@@ -30,7 +30,7 @@
         Image URL
             
         </label>
-            <input id="actor_image_input" type="text", name="actor_image">
+            <input id="actor_image_input" type="text", name="actor_image" value="<%= @actor.image_url %>">
     </div>
 
   <button>
