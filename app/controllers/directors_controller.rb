@@ -56,10 +56,10 @@ class DirectorsController < ApplicationController
         
         d.destroy
         
-        @remaining_count_director = Director.count
-        
         d.save
         
+        @remaining_count_director = Director.count
+
         render ("directors/destroy_director.html.erb")
     end
     

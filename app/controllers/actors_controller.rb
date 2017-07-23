@@ -55,10 +55,9 @@ class ActorsController < ApplicationController
         @actor_delete_id = params[:adios_actor_number]
         
         a.destroy
-        
+        a.save
         @remaining_count_actor = Actor.count
         
-        a.save
         
         render ("actors/destroy_actor.html.erb")
     end

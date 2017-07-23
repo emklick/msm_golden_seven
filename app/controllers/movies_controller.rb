@@ -57,10 +57,10 @@ class MoviesController < ApplicationController
         
         m.destroy
         
-        @remaining_count_movie = Movie.count
-        
         m.save
-        
+                
+        @remaining_count_movie = Movie.count
+    
         render ("movies/destroy_movie.html.erb")
     end
     
