@@ -1,26 +1,40 @@
-<h1>Hello!</h1>
+<h1>Add a New Actor</h1>
 
-<h1>Add a New Photo</h1>
-
-<form action="/create_photo">
+<form action="/create_actor">
     <div>
-        <label for="source_input">
-            Image URL
+        <label for="actor_name_input">
+        Name
             
         </label>
-            <input id="source_input" type="text", name="the_source">
+            <input id="actor_name_input" type="text", name="actor_name">
     </div>
     
     <div>
-        <label for="caption_input">
-            Caption
+        <label for="actor_bio_input">
+        Bio    
             
         </label>
-            <input id="caption_input" type="text", name="the_caption">
+            <input id="actor_bio_input" type="text", name="actor_bio">
+    </div>
+    
+     <div>
+        <label for="actor_dob_input">
+        DOB
+            
+        </label>
+            <input id="actor_dob_input" type="text", name="actor_dob">
+    </div>
+    
+    <div>
+        <label for="actor_image_input">
+        Image URL
+            
+        </label>
+            <input id="actor_image_input" type="text", name="actor_image">
     </div>
     
     <button>
-        Create Photo
+        Add Actor
     </button>
 </form>
 

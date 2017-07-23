@@ -6,15 +6,12 @@ class ActorsController < ApplicationController
     end
     
     def create
-        p = Photo.new
-        
-        p.source = params[:the_source]
-        p.caption = params[:the_caption]
+        p = Actor.new
         
         p.save
         
         
-        @current_count = Photo.count
+        @current_count = Actor.count
         
         render ("actors/create_actor.html.erb")
     end
@@ -25,19 +22,19 @@ class ActorsController < ApplicationController
     end
     
     def show
-        @photo = Photo.find(params["photo_id"])
+        @photo = Actor.find(params["photo_id"])
         
         render ("actors/show_actor.html.erb")
     end
     
     def edit
-        @photo = Photo.find(params["photo_id"])
+        @photo = Actor.find(params["photo_id"])
         
         render ("actors/edit_actor.html.erb")
     end
     
     def update
-        p = Photo.find(params[:photo_id])
+        p = Actor.find(params[:photo_id])
         
         p.source = params[:the_source]
         p.caption = params[:the_caption]
@@ -48,13 +45,13 @@ class ActorsController < ApplicationController
     end
     
     def destroy
-         p = Photo.find(params["adios_id"])
+         p = Actor.find(params["adios_id"])
         
         @photo_delete_id = params[:adios_id]
         
         p.destroy
         
-        @remaining_count = Photo.count
+        @remaining_count = Actor.count
         
         p.save
         

@@ -23,15 +23,15 @@ Rails.application.routes.draw do
 
 # ACTORS
   get("/actors", :controller => "actors", :action => "index")
-  get("/actors/:actor_name", :controller => "actors", :action => "show")
+  get("/actors/:actor_entry_number", :controller => "actors", :action => "show")
   
 # DIRECTORS  
   get("/directors", :controller => "directors", :action => "index")
-  get("/directors/:director_name", :controller => "directors", :action => "show")
+  get("/directors/:director_entry_number", :controller => "directors", :action => "show")
   
 # MOVIES   
   get("/movies", :controller => "movies", :action => "index")
-  get("/movies/:movie_title", :controller => "movies", :action => "show")
+  get("/movies/:movie__entry_number", :controller => "movies", :action => "show")
   
 
 # UPDATE

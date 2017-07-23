@@ -6,15 +6,12 @@ class MoviesController < ApplicationController
     end
     
     def create
-        p = Photo.new
-        
-        p.source = params[:the_source]
-        p.caption = params[:the_caption]
-        
+        p = Movie.new
+
         p.save
         
         
-        @current_count = Photo.count
+        @current_count = Movie.count
         
         render ("movies/create_movie.html.erb")
     end

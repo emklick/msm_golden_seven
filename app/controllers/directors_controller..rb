@@ -6,15 +6,13 @@ class DirectorsController < ApplicationController
     end
     
     def create
-        p = Photo.new
-        
-        p.source = params[:the_source]
-        p.caption = params[:the_caption]
+        p = Director.new
+
         
         p.save
         
         
-        @current_count = Photo.count
+        @current_count = Director.count
         
         render ("directors/create_director.html.erb")
     end
