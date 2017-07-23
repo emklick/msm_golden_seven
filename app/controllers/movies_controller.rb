@@ -6,6 +6,15 @@ class MoviesController < ApplicationController
     end
     
     def create
+        p = Photo.new
+        
+        p.source = params[:the_source]
+        p.caption = params[:the_caption]
+        
+        p.save
+        
+        
+        @current_count = Photo.count
         
         render ("movies/create_movie.html.erb")
     end
@@ -16,21 +25,38 @@ class MoviesController < ApplicationController
     end
     
     def show
+         @photo = Photo.find(params["photo_id"])
         
         render ("movies/show_movie.html.erb")
     end
     
     def edit
+         @photo = Photo.find(params["photo_id"])
         
         render ("movies/edit_movie.html.erb")
     end
     
     def update
+        p = Photo.find(params[:photo_id])
+        
+        p.source = params[:the_source]
+        p.caption = params[:the_caption]
+        
+        p.save
         
         render ("movies/update_movie.html.erb")
     end
     
     def destroy
+         p = Photo.find(params["adios_id"])
+        
+        @photo_delete_id = params[:adios_id]
+        
+        p.destroy
+        
+        @remaining_count = Photo.count
+        
+        p.save
         
         render ("movies/destroy_movie.html.erb")
     end
