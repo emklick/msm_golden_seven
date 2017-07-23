@@ -7,15 +7,15 @@ Rails.application.routes.draw do
 # CREATE
 
 # ACTORS - NEW & CREATE
-  get("/actors/new", :controller => "actors", :action => "new_form")
+  get("/actor/new", :controller => "actors", :action => "new_form")
   get("/create_actor", :controller => "actors", :action => "create")
 
 # DIRECTORS - NEW & CREATE
-  get("/directors/new", :controller => "directors", :action => "new_form")
+  get("/director/new", :controller => "directors", :action => "new_form")
   get("/create_director", :controller => "directors", :action => "create")
 
 # MOVIES - NEW & CREATE  
-  get("/movies/new", :controller => "movies", :action => "new_form")
+  get("/movie/new", :controller => "movies", :action => "new_form")
   get("/create_movie", :controller => "movies", :action => "create")
   
   
