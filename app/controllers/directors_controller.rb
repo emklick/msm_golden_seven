@@ -8,10 +8,10 @@ class DirectorsController < ApplicationController
     def create
         d = Director.new
         
-        d.name = params[:director_name]
-        d.bio = params[:director_bio]
-        d.dob = params[:director_dob]        
-        d.image_url = params[:image_url]
+        d.name = params["director_name"]
+        d.bio = params["director_bio"]
+        d.dob = params["director_dob"]        
+        d.image_url = params["director_image"]
         
         d.save
         
@@ -37,10 +37,10 @@ class DirectorsController < ApplicationController
     def edit
         @director = Director.find(params["director_entry_number"])
         
-        d.name = params[:director_name]
-        d.bio = params[:director_bio]
-        d.dob = params[:director_dob]        
-        d.image_url = params[:image_url]
+        d.name = params["director_name"]
+        d.bio = params["director_bio"]
+        d.dob = params["director_dob"]        
+        d.image_url = params["director_image"]
         
         d.save
         
@@ -50,9 +50,10 @@ class DirectorsController < ApplicationController
     def update
         d = Director.find(params[:director_entry_number])
         
-        d.name = params[:director_name]
-        d.bio = params[:director_bio]
-        d.dob = params[:director_dob]
+        d.name = params["director_name"]
+        d.bio = params["director_bio"]
+        d.dob = params["director_dob"]        
+        d.image_url = params["director_image"]
         
         @director_name = params[:director_name] 
         

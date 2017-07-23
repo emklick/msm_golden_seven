@@ -8,11 +8,11 @@ class MoviesController < ApplicationController
     def create
         m = Movie.new
         
-        m.title = params[:movie_title]
-        m.year = params[:movie_year]
-        m.duration = params[:movie_duration]
-        m.description = params[:movie_description]
-        m.image_url = params[:image_url]
+        m.title = params["movie_title"]
+        m.year = params["movie_year"]
+        m.duration = params["movie_duration"]
+        m.description = params["movie_description"]
+        m.image_url = params["movie_image"]
 
         m.save
         
@@ -38,11 +38,11 @@ class MoviesController < ApplicationController
     def edit
         @movie = Movie.find(params["movie_entry_number"])
 
-        m.title = params[:movie_title]
-        m.year = params[:movie_year]
-        m.duration = params[:movie_duration]
-        m.description = params[:movie_description]
-        m.image_url = params[:image_url]
+        m.title = params["movie_title"]
+        m.year = params["movie_year"]
+        m.duration = params["movie_duration"]
+        m.description = params["movie_description"]
+        m.image_url = params["movie_image"]
         
         m.save
         
@@ -52,10 +52,11 @@ class MoviesController < ApplicationController
     def update
         m = Movie.find(params[:movie_entry_number])
         
-        m.title = params[:movie_title]
-        m.year = params[:movie_year]
-        m.duration = params[:movie_duration]
-        m.description = params[:movie_description]
+        m.title = params["movie_title"]
+        m.year = params["movie_year"]
+        m.duration = params["movie_duration"]
+        m.description = params["movie_description"]
+        m.image_url = params["movie_image"]
     
         @movie_title = params[:movie_title]
         

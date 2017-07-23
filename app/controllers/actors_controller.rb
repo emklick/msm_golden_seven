@@ -8,10 +8,10 @@ class ActorsController < ApplicationController
     def create
         a = Actor.new
         
-        a.name = params[:actor_name]
-        a.bio = params[:actor_bio]
-        a.dob = params[:actor_dob]        
-        a.image_url = params[:image_url]
+        a.name = params["actor_name"]
+        a.bio = params["actor_bio"]
+        a.dob = params["actor_dob"]
+        a.image_url = params ["actor_image"]
         
         a.save
         
@@ -37,10 +37,10 @@ class ActorsController < ApplicationController
     def edit
         @actor = Actor.find(params["actor_entry_number"])
 
-        a.name = params[:actor_name]
-        a.bio = params[:actor_bio]
-        a.dob = params[:actor_dob]        
-        a.image_url = params[:image_url]
+        a.name = params["actor_name"]
+        a.bio = params["actor_bio"]
+        a.dob = params["actor_dob"]
+        a.image_url = params ["actor_image"]
         
         a.save
         
@@ -50,9 +50,10 @@ class ActorsController < ApplicationController
     def update
         a = Actor.find(params[:actor_entry_number])
         
-        a.name = params[:actor_name]
-        a.bio = params[:actor_bio]
-        a.dob = params[:actor_dob]
+        a.name = params["actor_name"]
+        a.bio = params["actor_bio"]
+        a.dob = params["actor_dob"]
+        a.image_url = params ["actor_image"]
         
         @actor_name = params[:actor_name]
         @actor_id = params[:actor_entry_number]
