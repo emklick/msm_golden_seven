@@ -37,6 +37,8 @@ class DirectorsController < ApplicationController
     def edit
         @director = Director.find(params["director_entry_number"])
         
+        d = @director
+        
         d.name = params["director_name"]
         d.bio = params["director_bio"]
         d.dob = params["director_dob"]        
@@ -76,7 +78,7 @@ class DirectorsController < ApplicationController
         @remaining_count_director = Director.count
 
         render("directors/destroy_director.html.erb")
-        redirect("directors/index_directors.html.erb")
+        redirect_to("directors/index_directors.html.erb")
     end
     
 end

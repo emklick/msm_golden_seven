@@ -36,6 +36,8 @@ class ActorsController < ApplicationController
     
     def edit
         @actor = Actor.find(params["actor_entry_number"])
+        
+        a = @director
 
         a.name = params["actor_name"]
         a.bio = params["actor_bio"]
@@ -74,7 +76,7 @@ class ActorsController < ApplicationController
         
         
         render("actors/destroy_actor.html.erb")
-        redirect("actors/index_actors.html.erb")
+        redirect_to("actors/index_actors.html.erb")
     end
     
 end

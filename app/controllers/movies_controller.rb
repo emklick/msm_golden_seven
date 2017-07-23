@@ -38,6 +38,8 @@ class MoviesController < ApplicationController
     def edit
         @movie = Movie.find(params["movie_entry_number"])
 
+        m = @movie
+
         m.title = params["movie_title"]
         m.year = params["movie_year"]
         m.duration = params["movie_duration"]
@@ -79,7 +81,7 @@ class MoviesController < ApplicationController
         @remaining_count_movie = Movie.count
     
         render("movies/destroy_movie.html.erb")
-        redirect("movies/index.html.erb")
+        redirect_to("movies/index.html.erb")
     end
     
 end
