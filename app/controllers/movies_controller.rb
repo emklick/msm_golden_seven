@@ -24,25 +24,26 @@ class MoviesController < ApplicationController
     end
     
     def show
-        @movie = Movie.find(params["movie_number"])
+        @movie = Movie.find(params[:movie_entry_number])
         
         render ("movies/show_movie.html.erb")
     end
     
     def edit
-        @movie = Movie.find(params["movie_number"])
+        @movie = Movie.find(params["movie_entry_number"])
         
         render ("movies/edit_movie.html.erb")
     end
     
     def update
-        m = Movie.find(params[:movie_number])
+        m = Movie.find(params[:movie_entry_number])
         
         m.title = params[:movie_title]
         m.year = params[:movie_year]
         m.duration = params[:movie_duration]
         m.description = params[:movie_description]
     
+        @movie_title = params[:movie_title]
         
         m.save
         

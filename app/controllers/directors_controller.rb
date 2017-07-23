@@ -24,23 +24,25 @@ class DirectorsController < ApplicationController
     end
     
     def show
-        @director = Director.find(params["director_number"])
+        @director = Director.find(params[:director_entry_number])
         
         render ("directors/show_director.html.erb")
     end
     
     def edit
-        @director = Director.find(params["director_number"])
+        @director = Director.find(params["director_entry_number"])
         
         render ("directors/edit_director.html.erb")
     end
     
     def update
-        d = Director.find(params[:director_number])
+        d = Director.find(params[:director_entry_number])
         
         d.name = params[:director_name]
         d.bio = params[:director_bio]
         d.dob = params[:director_dob]
+        
+        @director_name = params[:director_name] 
         
         d.save
         

@@ -8,16 +8,21 @@
   <div class="thumbnail">
     <img src="<%= movie.image_url %>">
 
+    <div class="name">
+      <a href="/movies/<%= movie.id %>" class="btn btn-default btn-block">
+        <%= @movie_title %>
+      </a>
+    
     <div class="title">
-      <a href="/directors/<%= movie.id %>" class="btn btn-default btn-block">
+      <a href="/movies/<%= movie.id %>" class="btn btn-default btn-block">
         Show Details
       </a>
 
-      <a href="/directors/<%= movie.id %>/edit" class="btn btn-default btn-block">
+      <a href="/movies/<%= movie.id %>/edit" class="btn btn-default btn-block">
         Edit
       </a>
 
-      <a href="/delete_director/<%= movie.id %>" class="btn btn-default btn-block">
+      <a href="/delete_movie/<%= movie.id %>" class="btn btn-default btn-block">
         Delete
       </a>
     </div>

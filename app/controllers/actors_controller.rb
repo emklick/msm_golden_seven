@@ -24,23 +24,25 @@ class ActorsController < ApplicationController
     end
     
     def show
-        @actor = Actor.find(params["actor_number"])
+        @actor = Actor.find(params[:actor_entry_number])
         
         render ("actors/show_actor.html.erb")
     end
     
     def edit
-        @actor = Actor.find(params["actor_number"])
+        @actor = Actor.find(params["actor_entry_number"])
         
         render ("actors/edit_actor.html.erb")
     end
     
     def update
-        a = Actor.find(params[:actor_number])
+        a = Actor.find(params[:actor_entry_number])
         
         a.name = params[:actor_name]
         a.bio = params[:actor_bio]
         a.dob = params[:actor_dob]
+        
+        @actor_name = params[:actor_name]
         
         a.save
         

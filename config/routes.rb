@@ -6,47 +6,47 @@ Rails.application.routes.draw do
   
 # CREATE
 
-# ACTORS
+# ACTORS - NEW & CREATE
   get("/actors/new", :controller => "actors", :action => "new_form")
   get("/create_actor", :controller => "actors", :action => "create")
 
-# DIRECTORS  
+# DIRECTORS - NEW & CREATE
   get("/directors/new", :controller => "directors", :action => "new_form")
   get("/create_director", :controller => "directors", :action => "create")
 
-# MOVIES  
+# MOVIES - NEW & CREATE  
   get("/movies/new", :controller => "movies", :action => "new_form")
   get("/create_movie", :controller => "movies", :action => "create")
   
   
 # READ
 
-# ACTORS
+# ACTORS - INDEX & DETAILS/SHOW
   get("/actors", :controller => "actors", :action => "index")
   get("/actors/:actor_entry_number", :controller => "actors", :action => "show")
   
-# DIRECTORS  
+# DIRECTORS - INDEX & DETAILS/SHOW  
   get("/directors", :controller => "directors", :action => "index")
   get("/directors/:director_entry_number", :controller => "directors", :action => "show")
   
-# MOVIES   
+# MOVIES - INDEX & DETAILS/SHOW   
   get("/movies", :controller => "movies", :action => "index")
   get("/movies/:movie_entry_number", :controller => "movies", :action => "show")
   
 
 # UPDATE
 
-# ACTORS
-  get("/actors/:actor_number/edit", :controller => "actors", :action => "edit")
-  get("/update_actor/:actor_number", :controller => "actors", :action => "update")
+# ACTORS - EDIT & UPDATE
+  get("/actors/:actor_entry_number/edit", :controller => "actors", :action => "edit")
+  get("/update_actor/:actor_entry_number", :controller => "actors", :action => "update")
   
-# DIRECTORS
-  get("/directors/:director_number/edit", :controller => "directors", :action => "edit")
-  get("/update_director/:director_number", :controller => "directors", :action => "update")
+# DIRECTORS - EDIT & UPDATE
+  get("/directors/:director_entry_number/edit", :controller => "directors", :action => "edit")
+  get("/update_director/:director_entry_number", :controller => "directors", :action => "update")
 
-# MOVIES   
-  get("/movies/:movie_number/edit", :controller => "movies", :action => "edit")
-  get("/update_movie/:movie_number", :controller => "movies", :action => "update")
+# MOVIES - EDIT & UPDATE   
+  get("/movies/:movie_entry_number/edit", :controller => "movies", :action => "edit")
+  get("/update_movie/:movie_entry_number", :controller => "movies", :action => "update")
   
   
 # DESTROY
