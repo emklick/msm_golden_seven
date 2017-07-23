@@ -6,14 +6,9 @@ class DirectorsController < ApplicationController
     end
     
     def create
-        d = Director.new
-        
-        d.name = params[:director_name]
-        d.bio = params[:director_bio]
-        d.dob = params[:director_dob]        
-        d.image_url = params[:director_image]
-        
-        d.save
+        @director_new = Director.new
+
+        @director_new.save
         
         
         @current_count_directors = Director.count
@@ -37,48 +32,32 @@ class DirectorsController < ApplicationController
     def edit
         @director = Director.find(params["director_entry_number"])
         
-        # d = @director
-        
-        # d.name = params[:director_name]
-        # d.bio = params[:director_bio]
-        # d.dob = params[:director_dob]        
-        # d.image_url = params[:director_image]
-        
-        # d.save
+        @director.save
         
         render("directors/edit_director.html.erb")
     end
     
     def update
-        d = Director.find(params[:director_entry_number])
+        @director = Director.find(params[:director_entry_number])
         
-        d.name = params[:director_name]
-        d.bio = params[:director_bio]
-        d.dob = params[:director_dob]        
-        d.image_url = params[:director_image]
         
-        @director_name = params[:director_name] 
-        
-        @director_id = params[:director_entry_number]
-        
-        d.save
+        @director.save
         
         render("directors/update_director.html.erb")
     end
     
     def destroy
-        d = Director.find(params["adios_director_number"])
+        @director_delete = Director.find(params["adios_director_number"])
         
         @director_delete_id = params[:adios_director_number]
         
-        d.destroy
-        
-        d.save
+        @director_delete.destroy
+        @director_delete.save
         
         @remaining_count_director = Director.count
 
         render("directors/destroy_director.html.erb")
-        redirect_to("directors/index_directors.html.erb")
+        # redirect_to("directors/index_directors.html.erb")
     end
     
 end

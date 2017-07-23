@@ -6,15 +6,9 @@ class MoviesController < ApplicationController
     end
     
     def create
-        m = Movie.new
+        @movie_new = Movie.new
         
-        m.title = params[:movie_title]
-        m.year = params[:movie_year]
-        m.duration = params[:movie_duration]
-        m.description = params[:movie_description]
-        m.image_url = params[:movie_image]
-        
-        m.save
+        @movei_new.save
         
         
         @current_count_movies = Movie.count
@@ -37,51 +31,33 @@ class MoviesController < ApplicationController
     
     def edit
         @movie = Movie.find(params["movie_entry_number"])
-
-        # m = @movie
-
-        # m.title = params[:movie_title]
-        # m.year = params[:movie_year]
-        # m.duration = params[:movie_duration]
-        # m.description = params[:movie_description]
-        # m.image_url = params[:movie_image]
         
-        # m.save
+        @movie.save
         
         render("movies/edit_movie.html.erb")
     end
     
     def update
-        m = Movie.find(params[:movie_entry_number])
+        @movie = Movie.find(params[:movie_entry_number])
         
-        m.title = params[:movie_title]
-        m.year = params[:movie_year]
-        m.duration = params[:movie_duration]
-        m.description = params[:movie_description]
-        m.image_url = params[:movie_image]
-    
-        @movie_title = params[:movie_title]
         
-        @movie_id = params[:movie_entry_number]
-        
-        m.save
+        @movie.save
         
         render("movies/update_movie.html.erb")
     end
     
     def destroy
-        m = Movie.find(params["adios_movie_number"])
+        @movie_delete = Movie.find(params["adios_movie_number"])
         
         @movie_delete_id = params[:adios_movie_number]
         
-        m.destroy
-        
-        m.save
+        @movie_delete.destroy
+        @movie_delete.save
                 
         @remaining_count_movie = Movie.count
     
         render("movies/destroy_movie.html.erb")
-        redirect_to("movies/index.html.erb")
+        # redirect_to("movies/index.html.erb")
     end
     
 end
