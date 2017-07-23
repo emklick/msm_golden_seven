@@ -2,7 +2,7 @@ class MoviesController < ApplicationController
     
     def new_form
         
-        render ("movies/new_form_movie.html.erb")
+        render("movies/new_form_movie.html.erb")
     end
     
     def create
@@ -19,14 +19,14 @@ class MoviesController < ApplicationController
         
         @current_count_movies = Movie.count
         
-        render ("movies/create_movie.html.erb")
+        render("movies/create_movie.html.erb")
     end
     
     def index
         
         @list_of_movies = Movie.order(:created_at => :desc)
         
-        render ("movies/index_movies.html.erb")
+        render("movies/index_movies.html.erb")
     end
     
     def show
@@ -38,7 +38,7 @@ class MoviesController < ApplicationController
     def edit
         @movie = Movie.find(params["movie_entry_number"])
         
-        render ("movies/edit_movie.html.erb")
+        render("movies/edit_movie.html.erb")
     end
     
     def update
@@ -55,7 +55,7 @@ class MoviesController < ApplicationController
         
         m.save
         
-        render ("movies/update_movie.html.erb")
+        render("movies/update_movie.html.erb")
     end
     
     def destroy
@@ -69,7 +69,8 @@ class MoviesController < ApplicationController
                 
         @remaining_count_movie = Movie.count
     
-        render ("movies/destroy_movie.html.erb")
+        render("movies/destroy_movie.html.erb")
+        redirect("movies/index.html.erb")
     end
     
 end

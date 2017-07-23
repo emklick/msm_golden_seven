@@ -2,7 +2,7 @@ class ActorsController < ApplicationController
     
     def new_form
         
-        render ("actors/new_form_actor.html.erb")
+        render("actors/new_form_actor.html.erb")
     end
     
     def create
@@ -18,26 +18,26 @@ class ActorsController < ApplicationController
         
         @current_count_actors = Actor.count
         
-        render ("actors/create_actor.html.erb")
+        render("actors/create_actor.html.erb")
     end
     
     def index
         
         @list_of_actors = Actor.order(:created_at => :desc)
         
-        render ("actors/index_actors.html.erb")
+        render("actors/index_actors.html.erb")
     end
     
     def show
         @actor = Actor.find(params[:actor_entry_number])
         
-        render ("actors/show_actor.html.erb")
+        render("actors/show_actor.html.erb")
     end
     
     def edit
         @actor = Actor.find(params["actor_entry_number"])
         
-        render ("actors/edit_actor.html.erb")
+        render("actors/edit_actor.html.erb")
     end
     
     def update
@@ -52,7 +52,7 @@ class ActorsController < ApplicationController
         
         a.save
         
-        render ("actors/update_actor.html.erb")
+        render("actors/update_actor.html.erb")
     end
     
     def destroy
@@ -65,7 +65,8 @@ class ActorsController < ApplicationController
         @remaining_count_actor = Actor.count
         
         
-        render ("actors/destroy_actor.html.erb")
+        render("actors/destroy_actor.html.erb")
+        redirect("actors/index_actors.html.erb")
     end
     
 end
