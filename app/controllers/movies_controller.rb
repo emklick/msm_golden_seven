@@ -42,6 +42,7 @@ class MoviesController < ApplicationController
         m.year = params[:movie_year]
         m.duration = params[:movie_duration]
         m.description = params[:movie_description]
+    
         
         m.save
         

@@ -7,7 +7,6 @@ class DirectorsController < ApplicationController
     
     def create
         d = Director.new
-
         
         d.save
         
