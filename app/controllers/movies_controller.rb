@@ -7,6 +7,12 @@ class MoviesController < ApplicationController
     
     def create
         m = Movie.new
+        
+        m.title = params[:movie_title]
+        m.year = params[:movie_year]
+        m.duration = params[:movie_duration]
+        m.description = params[:movie_description]
+        m.image_url = params[:image_url]
 
         m.save
         

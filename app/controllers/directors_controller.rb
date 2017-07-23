@@ -8,6 +8,11 @@ class DirectorsController < ApplicationController
     def create
         d = Director.new
         
+        d.name = params[:director_name]
+        d.bio = params[:director_bio]
+        d.dob = params[:director_dob]        
+        d.image_url = params[:image_url]
+        
         d.save
         
         
@@ -44,7 +49,7 @@ class DirectorsController < ApplicationController
         
         @director_name = params[:director_name] 
         
-        @direcctor_id = params[:director_entry_number]
+        @director_id = params[:director_entry_number]
         
         d.save
         

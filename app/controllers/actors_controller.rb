@@ -8,6 +8,11 @@ class ActorsController < ApplicationController
     def create
         a = Actor.new
         
+        a.name = params[:actor_name]
+        a.bio = params[:actor_bio]
+        a.dob = params[:actor_dob]        
+        a.image_url = params[:image_url]
+        
         a.save
         
         
