@@ -1,12 +1,12 @@
 <h1>Edit Movie Entry Number <%= @movie.id %></h1>
 
-<form action="/update_photo/<%= @movie.id %>">
+<form action="/update_movie/<%= @movie.id %>">
   <div>
         <label for="title_input">
         Title
             
         </label>
-            <input id="title_input" type="text", name="movie_name" value="<%= @movie.title %>">
+            <input id="title_input" type="text", name="movie_name", value="<%= @movie.title %>">
     </div>
     
     <div>
@@ -14,7 +14,7 @@
         Year    
             
         </label>
-            <input id="year_input" type="text", name="movie_bio" value="<%= @movie.year %>">
+            <input id="year_input" type="text", name="movie_bio", value="<%= @movie.year %>">
     </div>
     
      <div>
@@ -22,7 +22,7 @@
         Duration (Minutes)
             
         </label>
-            <input id="duration_input" type="text", name="movie_dob" value="<%= @movie.duration %>">
+            <input id="duration_input" type="text", name="movie_dob", value="<%= @movie.duration %>">
     </div>
     
     <div>
@@ -30,7 +30,7 @@
         Description
             
         </label>
-            <input id="description_input" type="text", name="movie_image" value="<%= @movie.description %>">
+            <input id="description_input" type="text", name="movie_image", value="<%= @movie.description %>">
     </div>
     
     <div>
