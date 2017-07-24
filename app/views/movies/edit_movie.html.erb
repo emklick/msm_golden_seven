@@ -41,9 +41,11 @@
             <input id="movie_image_input" type="text", name="movie_image" value="<%= @movie.image_url %>">
     </div>
 
-  <button>
-    Update movie
-  </button>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <p><a href="/movies/<%= @movie.id %>" class="btn btn-primary">Update Movie</a></p>
+    </div>
+  </div>
   
 </form>
 

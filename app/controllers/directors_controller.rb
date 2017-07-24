@@ -67,7 +67,7 @@ class DirectorsController < ApplicationController
         @remaining_count_director = Director.count
 
         render("directors/destroy_director.html.erb")
-        # redirect_to("directors/index_directors.html.erb")
+        redirect_to("/directors/")
     end
     
 end
