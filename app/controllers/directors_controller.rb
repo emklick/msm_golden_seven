@@ -35,7 +35,7 @@ class DirectorsController < ApplicationController
     end
     
     def edit
-        @director = Actor.find(params[:director_entry_number])
+        @director = Director.find(params[:director_entry_number])
         d = @director
         d.save
         
@@ -53,7 +53,7 @@ class DirectorsController < ApplicationController
         
         d.save
         
-        @director_id = Actor.find(params[:director_entry_number])
+        @director_id = Direcctor.find(params[:director_entry_number])
         
         render("directors/update_director.html.erb")
     end
