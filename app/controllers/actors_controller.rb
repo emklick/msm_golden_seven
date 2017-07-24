@@ -6,9 +6,14 @@ class ActorsController < ApplicationController
     end
     
     def create
-        @actor_new = Actor.new
+        a = Actor.new
         
-        @actor_new.save
+        a.name = params[:actor_name]
+        a.dob = params[:actor_dob]
+        a.bio = params[:actor_bio]
+        a.image_url = params[:actor_image]
+        
+        a.save
         
         
         @current_count_actors = Actor.count
@@ -30,29 +35,33 @@ class ActorsController < ApplicationController
     end
     
     def edit
-        @actor = Actor.find(params["actor_entry_number"])
-        
-        @actor.save
+        @actor = Actor.find(params[:actor_entry_number])
+        a = @actor
+        a.save
         
         render("actors/edit_actor.html.erb")
     end
     
     def update
-        @actor = Actor.find(params[:actor_entry_number])
-    
+        a = Actor.find(params[:actor_entry_number])
         
-        @actor.save
+        a.name = params[:actor_name]
+        a.dob = params[:actor_dob]
+        a.bio = params[:actor_bio]
+        a.image_url = params[:actor_image]        
+        
+        a.save
+        
+        @actor_id = Actor.find(params[:actor_entry_number])
         
         render("actors/update_actor.html.erb")
     end
     
     def destroy
-        @actor_delete = Actor.find(params[:adios_actor_number])
-        
-        @actor_delete_id = params[:adios_actor_number]
+        a = Actor.find(params[:adios_actor_number])
 
-        @actor_delete.destroy
-        @actor_delete.save
+        a.destroy
+        a.save
         
         @remaining_count_actor = Actor.count
         

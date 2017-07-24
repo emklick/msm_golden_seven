@@ -6,10 +6,15 @@ class DirectorsController < ApplicationController
     end
     
     def create
-        @director_new = Director.new
-
-        @director_new.save
+        d = Director.new
         
+        d.name = params[:director_name]
+        d.dob = params[:director_dob]
+        d.bio = params[:director_bio]
+        d.image_url = params[:director_image]
+        
+        d.save
+                
         
         @current_count_directors = Director.count
         
@@ -30,29 +35,34 @@ class DirectorsController < ApplicationController
     end
     
     def edit
-        @director = Director.find(params["director_entry_number"])
+        @director = Actor.find(params[:director_entry_number])
+        d = @director
+        d.save
         
-        @director.save
         
         render("directors/edit_director.html.erb")
     end
     
     def update
-        @director = Director.find(params[:director_entry_number])
+        d = Director.find(params[:director_entry_number])
         
+        d.name = params[:director_name]
+        d.dob = params[:director_dob]
+        d.bio = params[:director_bio]
+        d.image_url = params[:director_image]       
         
-        @director.save
+        d.save
+        
+        @director_id = Actor.find(params[:director_entry_number])
         
         render("directors/update_director.html.erb")
     end
     
     def destroy
-        @director_delete = Director.find(params["adios_director_number"])
-        
-        @director_delete_id = params[:adios_director_number]
-        
-        @director_delete.destroy
-        @director_delete.save
+        d = Director.find(params[:adios_director_number])
+
+        d.destroy
+        d.save
         
         @remaining_count_director = Director.count
 

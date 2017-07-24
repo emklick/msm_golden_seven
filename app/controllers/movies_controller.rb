@@ -6,9 +6,15 @@ class MoviesController < ApplicationController
     end
     
     def create
-        @movie_new = Movie.new
+        m = Movie.new
         
-        @movei_new.save
+        m.title = params[:movie_title]
+        m.year = params[:movie_year]
+        m.duration = params[:movie_duration]
+        m.description = params[:movie_description]
+        m.image_url = params[:movie_image]
+        
+        m.save
         
         
         @current_count_movies = Movie.count
@@ -31,28 +37,33 @@ class MoviesController < ApplicationController
     
     def edit
         @movie = Movie.find(params["movie_entry_number"])
-        
-        @movie.save
+        m = @movie
+        m.save
         
         render("movies/edit_movie.html.erb")
     end
     
     def update
-        @movie = Movie.find(params[:movie_entry_number])
+        m = Movie.find(params[:movie_entry_number])
         
+        m.title = params[:movie_title]
+        m.year = params[:movie_year]
+        m.duration = params[:movie_duration]
+        m.description = params[:movie_description]
+        m.image_url = params[:movie_image]
         
-        @movie.save
+        m.save
+        
+        @movie_id = Movie.find(params[:movie_entry_number])
         
         render("movies/update_movie.html.erb")
     end
     
     def destroy
-        @movie_delete = Movie.find(params["adios_movie_number"])
-        
-        @movie_delete_id = params[:adios_movie_number]
-        
-        @movie_delete.destroy
-        @movie_delete.save
+        m = Movie.find(params[:adios_movie_number])
+
+        m.destroy
+        m.save
                 
         @remaining_count_movie = Movie.count
     
