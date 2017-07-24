@@ -52,7 +52,7 @@ class ActorsController < ApplicationController
         
         a.save
         
-        @actor_id = Actor.find(params[:actor_entry_number])
+        @actor = Actor.find(params[:actor_entry_number])
         
         render("actors/update_actor.html.erb")
     end

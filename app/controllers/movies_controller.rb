@@ -36,7 +36,7 @@ class MoviesController < ApplicationController
     end
     
     def edit
-        @movie = Movie.find(params["movie_entry_number"])
+        @movie = Movie.find(params[:movie_entry_number])
         m = @movie
         m.save
         
@@ -54,7 +54,7 @@ class MoviesController < ApplicationController
         
         m.save
         
-        @movie_id = Movie.find(params[:movie_entry_number])
+        @movie = Movie.find(params[:movie_entry_number])
         
         render("movies/update_movie.html.erb")
     end
