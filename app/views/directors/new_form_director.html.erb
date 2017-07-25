@@ -14,7 +14,7 @@
         Bio    
             
             <div class="col-sm-10">
-              <textarea id="director_bio_input" name="director_input" placeholder="Bio" class="form-control" rows="3"></textarea>
+              <textarea id="director_bio_input" name="director_bio" placeholder="Bio" class="form-control" rows="3"></textarea>
             </div>
     </div>
     
@@ -33,13 +33,16 @@
         </label>
             
             <div class="col-sm-10">
-              <textarea id="director_image_input" name="director_image_input" placeholder="Bio" class="form-control" rows="1"></textarea>
+              <textarea id="director_image_input" name="director_image" placeholder="Bio" class="form-control" rows="1"></textarea>
             </div>
     </div>
     
-    <button>
-        Create director
-    </button>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <p><a href="/directors/<%= @director.id %>" class="btn btn-primary">Update Director</a></p>
+    </div>
+  </div>
+  
 </form>
 
 

@@ -36,9 +36,11 @@
             <input id="actor_image_input" type="text", name="actor_image", value="<%= @actor.image_url %>">
     </div>
 
-  <button>
-    Update actor
-  </button>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <p><a href="/actors/<%= @actor.id %>" class="btn btn-primary">Update Actor</a></p>
+    </div>
+  </div>
   
 </form>
 

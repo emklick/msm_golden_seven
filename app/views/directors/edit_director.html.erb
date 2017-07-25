@@ -35,9 +35,11 @@
             <input id="director_image_input" type="text", name="director_image", value="<%= @director.image_url %>">
     </div>
 
-  <button>
-    Update director
-  </button>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <p><a href="/directors/<%= @director.id %>" class="btn btn-primary">Update Director</a></p>
+    </div>
+  </div>
   
 </form>
 

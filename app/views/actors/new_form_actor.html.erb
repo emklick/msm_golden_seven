@@ -32,12 +32,15 @@
         Image url
             
         </label>
-            <input id="actor_image_input" type="string", name="actor_image">
+            <input id="actor_image_input" type="text", name="actor_image">
     </div>
     
-    <button>
-        Create actor
-    </button>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <p><a href="/actors/<%= @actor.id %>" class="btn btn-primary">Update Actor</a></p>
+    </div>
+  </div>
+  
 </form>
 
 
