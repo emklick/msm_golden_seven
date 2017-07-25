@@ -14,7 +14,9 @@
         Bio    
             
         </label>
-            <input id="director_bio_input" type="text", name="director_bio", value="<%= @director.bio %>">
+            <div>
+            <textarea id="director_bio_input" type="text", name="director_bio", class="form-control" rows="3", value="<%= @director.bio %>"> </textarea>
+            </div>
     </div>
     
      <div>

@@ -14,7 +14,10 @@
         Bio    
             
         </label>
-            <input id="actor_bio_input" type="text", name="actor_bio", value="<%= @actor.bio %>">
+           
+            <div>
+            <textarea id="actor_bio_input" type="text", name="actor_bio", class="form-control" rows="3", value="<%= @actor.bio %>"> </textarea>
+            </div>
     </div>
     
      <div>
